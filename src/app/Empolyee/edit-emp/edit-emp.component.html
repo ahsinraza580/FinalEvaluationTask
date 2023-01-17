@@ -1,0 +1,94 @@
+<mat-card class="my-3">
+  <mat-card-content>
+    <div class="header">
+      <h1>Update Employee</h1>
+    </div>
+    <form [formGroup]="EmployeeForm" (ngSubmit)="onEdit()"  >
+
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input
+            formControlName="name"
+            matInput
+            type="text"
+            placeholder="Enter your name" required
+          />
+          <mat-error *ngIf="EmployeeForm.controls['name'].hasError('required')">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            formControlName="email"
+            matInput type="email"
+            placeholder="Enter email address" required
+          />
+          <mat-error *ngIf="EmployeeForm.controls['email'].hasError('email') && !EmployeeForm.controls['email'].hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="EmployeeForm.controls['email'].hasError('required')">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Age</mat-label>
+          <input
+            formControlName="age"
+            matInput type="number" onkeydown="return event.keyCode !== 69"
+            placeholder="Enter your age" required
+          />
+          <mat-error *ngIf="EmployeeForm.controls['age'].hasError('required')">
+            age is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="emailInput">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Salary</mat-label>
+          <input
+            formControlName="salary"
+            matInput
+            placeholder="Enter your salary" required
+          />
+          <mat-error *ngIf="EmployeeForm.controls['salary'].hasError('required')">
+            salary is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <button mat-flat-button color="primary">Update</button>
+    </form>
+
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
