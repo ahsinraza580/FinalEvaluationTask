@@ -9,7 +9,7 @@ import {EditDetailTabComponent} from "./Empolyee/edit-detail-tab/edit-detail-tab
 import {EditDetailSalaryComponent} from "./Empolyee/edit-detail-salary/edit-detail-salary.component";
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'',redirectTo:'emp',pathMatch:"full"},
   {path:'emp' ,component:EmployeeListComponent},
   {path:'emp/add',component:AddEmpComponent},
   {path:'emp/edit/:id',component:EditEmpComponent},
